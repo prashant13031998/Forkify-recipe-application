@@ -15,14 +15,11 @@ if (module.hot) {
   module.hot.accept();
 }
 
-// https://forkify-api.herokuapp.com/v2
-
 //////////////////////////////////////
 
 const controlRecipe = async function () {
   try {
     const id = window.location.hash.slice(1);
-    // console.log(id);
     if (!id) return;
 
     recipeView.renderSpinner();
@@ -55,7 +52,7 @@ const controlSearchResults = async function () {
     await model.loadSearchResult(query);
 
     //3. render result
-    // console.log(model.state.search.results);
+
     // resultsView.render(model.state.search.results);
     resultsView.render(model.searchResultsPage());
 
